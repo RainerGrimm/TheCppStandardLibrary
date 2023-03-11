@@ -1,0 +1,27 @@
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main(){
+
+  std::cout << '\n';
+  
+  std::vector<int> myVec{0, 1, 2, 3, 4, 5, 6, 7, 9};
+  std::vector<int> myVec2(10);
+
+  std::move(myVec.begin(), myVec.end(), myVec2.begin());
+  for ( auto v: myVec2 ) std::cout << v << " ";
+
+  std::cout << "\n\n";
+  
+  std::string str{"abcdefghijklmnop"};
+  std::string str2{"---------------------"};
+  
+  std::cout << str2 << '\n';
+  std::move_backward(str.begin(), str.end(), str2.end());
+  std::cout << str2 << '\n';
+    
+  std::cout << '\n';
+
+}
